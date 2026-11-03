@@ -1,56 +1,39 @@
-# Welcome to your Expo app 👋
+MyAccountApp - Mobile Application Development Practical 04
+Project Overview
+This project is a React Native application built using Expo. It was developed as part of Practical 04 to demonstrate Data Transfer Between Screens and Form Handling. The app allows users to register by entering their details, review the information on a separate screen, and confirm their submission to see a personalized success message.
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+Features Implemented
+Form Handling: Captured user input (Username, Email, Phone Number, Year of Birth, Password, Confirm Password) using the TextInput component and useState.
 
-## Get started
+Form Validation: Implemented validation to ensure all fields are filled and that the "Password" and "Confirm Password" fields match before navigation.
 
-1. Install dependencies
+Data Transfer: Used expo-router to pass parameters (Name, Email, Phone, and calculated Age) between screens using router.push.
 
-   ```bash
-   npm install
-   ```
+Parameter Retrieval: Used useLocalSearchParams on the Review and Success screens to extract and display the passed data.
 
-2. Start the app
+Navigation Stack: Utilized router.back() on the Review screen to allow users to edit their information, preserving the previous screen's state.
 
-   ```bash
-   npx expo start
-   ```
+Additional Task 1 (Age Calculation): Added a "Year of Birth" input on the Registration screen and calculated the user's age dynamically based on the current year.
 
-In the output, you'll find options to open the app in a
+Additional Task 2 (Conditional Navigation): Implemented a check on the Review screen that displays an Alert warning and prevents users under 18 from proceeding to the success screen.
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+Project Structure
+app/index.js - The Registration Screen (captures input and validates).
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+app/review.js - The Review Screen (displays data, allows editing or confirmation, checks age).
 
-## Get a fresh project
+app/success.js - The Success Screen (displays a customized greeting).
 
-When you're ready, run:
+Output_Screens/ - Contains the screenshots of the working application.
 
-```bash
-npm run reset-project
-```
+How to Run the App
+Clone this repository to your local machine.
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+Open a terminal and navigate to the project folder.
 
-### Other setup steps
+Run npm install to install dependencies.
 
-- To set up ESLint for linting, run `npx expo lint`, or follow our guide on ["Using ESLint and Prettier"](https://docs.expo.dev/guides/using-eslint/)
-- If you'd like to set up unit testing, follow our guide on ["Unit Testing with Jest"](https://docs.expo.dev/develop/unit-testing/)
-- Learn more about the TypeScript setup in this template in our guide on ["Using TypeScript"](https://docs.expo.dev/guides/typescript/)
+Run npx expo start to start the development server.
 
-## Learn more
+Scan the QR code with the Expo Go app on your physical device or run it on an Android/iOS emulator.
 
-To learn more about developing your project with Expo, look at the following resources:
-
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
-
-## Join the community
-
-Join our community of developers creating universal apps.
-
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
